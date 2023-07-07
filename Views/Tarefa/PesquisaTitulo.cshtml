@@ -1,0 +1,34 @@
+﻿@model List<App.MVC.Desafio.Models.Tarefa>
+
+@{
+    ViewData["Title"] = "Pesquisa pelo Titulo";
+}
+
+<h2>Tarefas - Filtro por Titulo</h2>
+
+<div>
+    <table class="tabela-contato shadow tela-contato">
+        <thead>
+            <tr class="cabecario">
+                <th class="linha-cabecario">ID</th>
+                <th>TITULO</th>
+                <th>DESCRIÇÃO</th>
+                <th>DATA</th>
+                <th>STATUS</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var tarefa in Model)
+            {
+                <tr>
+                    <td class="linha-cabecario">@Html.DisplayFor(model => tarefa.Id)</td>
+                    <td>@Html.DisplayFor(model => tarefa.Titulo)</td>
+                    <td>@Html.DisplayFor(model => tarefa.Descricao)</td>
+                    <td>@Html.DisplayFor(model => tarefa.Data)</td>
+                    <td>@Html.DisplayFor(model => tarefa.Status)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
